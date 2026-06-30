@@ -12,7 +12,9 @@ endif()
 project ("ElevatorSystem")
 
 # Add source to this project's executable.
-add_executable (ElevatorSystem "ElevatorSystem.cpp" "ElevatorSystem.h")
+add_executable (ElevatorSystem "src/main.cpp"  "include/Direction.h" "include/Elevator.h" "src/Elevator.cpp" "include/Request.h" "src/ElevatorController.cpp")
+
+target_include_directories(${PROJECT_NAME} PRIVATE include)
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET ElevatorSystem PROPERTY CXX_STANDARD 20)
